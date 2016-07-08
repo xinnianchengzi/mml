@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Orders" table="orders" catalog="mml">
+        <id name="OId" type="java.lang.Integer">
+            <column name="o_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="goods" class="com.mml.hbm.Goods" fetch="select">
+            <column name="g_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="memberuser" class="com.mml.hbm.Memberuser" fetch="select">
+            <column name="m_ID" not-null="true" />
+        </many-to-one>
+        <property name="OTotalPrice" type="big_decimal">
+            <column name="o_TotalPrice" precision="10" not-null="true" />
+        </property>
+        <property name="OReceiveState" type="string">
+            <column name="o_ReceiveState" length="2" not-null="true" />
+        </property>
+        <property name="OPayState" type="string">
+            <column name="o_PayState" length="2" not-null="true" />
+        </property>
+        <property name="OPayWay" type="string">
+            <column name="o_PayWay" length="5" />
+        </property>
+        <property name="OTime" type="timestamp">
+            <column name="o_Time" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

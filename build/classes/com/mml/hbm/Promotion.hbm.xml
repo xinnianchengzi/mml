@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Promotion" table="promotion" catalog="mml">
+        <id name="PId" type="java.lang.Integer">
+            <column name="p_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="PStartTime" type="timestamp">
+            <column name="p_StartTime" length="19" not-null="true" />
+        </property>
+        <property name="PEndTime" type="timestamp">
+            <column name="p_EndTime" length="19" not-null="true" />
+        </property>
+        <property name="PPost" type="string">
+            <column name="p_Post" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

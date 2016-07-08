@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Administer" table="administer" catalog="mml">
+        <id name="AId" type="java.lang.Integer">
+            <column name="a_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="AName" type="string">
+            <column name="a_Name" length="10" not-null="true" />
+        </property>
+        <property name="APassword" type="string">
+            <column name="a_Password" length="16" not-null="true" />
+        </property>
+        <property name="AVerify" type="string">
+            <column name="a_Verify" length="2" not-null="true" />
+        </property>
+        <property name="ASuperOrNot" type="string">
+            <column name="a_SuperOrNot" length="2" not-null="true" />
+        </property>
+        <property name="ARegTime" type="timestamp">
+            <column name="a_RegTime" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Discount" table="discount" catalog="mml">
+        <id name="DId" type="java.lang.Integer">
+            <column name="d_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="DDiscount" type="big_decimal">
+            <column name="d_Discount" precision="3" not-null="true" />
+        </property>
+        <property name="SId" type="int">
+            <column name="s_ID" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

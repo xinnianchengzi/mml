@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Coupon" table="coupon" catalog="mml">
+        <id name="CId" type="java.lang.Integer">
+            <column name="c_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="CNumber" type="int">
+            <column name="c_Number" not-null="true" />
+        </property>
+        <property name="CLimit" type="big_decimal">
+            <column name="c_Limit" precision="10" />
+        </property>
+        <property name="CPrice" type="big_decimal">
+            <column name="c_Price" precision="10" />
+        </property>
+        <set name="coupongets" table="couponget" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="c_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Couponget" />
+        </set>
+    </class>
+</hibernate-mapping>

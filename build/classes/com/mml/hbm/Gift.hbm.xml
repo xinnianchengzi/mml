@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Gift" table="gift" catalog="mml">
+        <id name="giftId" type="java.lang.Integer">
+            <column name="gift_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="goods" class="com.mml.hbm.Goods" fetch="select">
+            <column name="g_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="seller" class="com.mml.hbm.Seller" fetch="select">
+            <column name="s_ID" not-null="true" />
+        </many-to-one>
+        <property name="giftLimit" type="big_decimal">
+            <column name="gift_Limit" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

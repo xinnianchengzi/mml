@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Address" table="address" catalog="mml">
+        <id name="addressId" type="java.lang.Integer">
+            <column name="address_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="memberuser" class="com.mml.hbm.Memberuser" fetch="select">
+            <column name="m_ID" not-null="true" />
+        </many-to-one>
+        <property name="phoneNumber" type="string">
+            <column name="phone_Number" length="11" />
+        </property>
+        <property name="MAddress" type="string">
+            <column name="m_Address" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

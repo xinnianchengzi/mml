@@ -1,0 +1,240 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+#site-nav {
+    min-width: 600px;
+    width: auto;
+    height:32px ;
+    color: #999;
+    position: relative;
+    background-color:#f2f2f2;
+    border-bottom:1px solid #e5e5e5;
+    /*top:1px;*/
+    font-size: 12px;
+}
+#sn-bd{
+    max-width: 1230px;
+    margin:auto;
+}
+.sn-container{
+    width: 100%;
+    height: 32px;
+    position: relative;
+}
+.sn-container li a{
+    color: #999999;
+}
+.sn-container li > a:hover{
+    text-decoration: none;
+    color: #c40000;
+}
+.sn-container .caret{
+    border-top: 3px solid;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+}
+.sn-left{
+    line-height: 32px;
+    position: relative;
+}
+li.registerSelect{
+    width: 60px;
+    text-align: center;
+    padding-left: 0px;
+}
+.registerSelect > a{
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    height: 30px;
+}
+.registerSelect > a:hover{
+    background-color: white;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    /*border-bottom: 1px solid #e5e5e5;*/
+}
+.registerSelect .dropdown-menu{
+    border-top: none;
+    width: 80px;
+}
+.registerSelect .dropdown-menu  a:hover{
+    background-color: inherit;
+}
+ #loginModal .modal-dialog{
+    width: 350px;
+    margin: 120px auto;
+}
+#loginModal .modal-content{
+    box-shadow: 0px 5px 150px #c40000;
+    background-color: #d43f3a;
+    opacity:0.935;
+
+}
+#loginModal .modal-title{
+    color: snow;
+}
+#memberRegister .modal-dialog,#sellerRegister .modal-dialog{
+    width: 450px;
+}
+.s_Verify{
+    display: block;
+    height: 28px;
+    /*border: none;*/
+}
+.sn-right{
+    line-height: 32px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+header{
+    height: 110px;
+    min-width: 990px;
+    background-color: #fff;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.h-con{
+    width:990px;
+    margin: auto;
+}
+.h-banner{
+    float: right;
+    height: 110px;
+    width: 300px;
+}
+.malllogo{
+    float: left;
+    width: 200px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+#mallsearch{
+   padding-top: 38px;
+    float: right;
+    overflow: hidden;
+    width: 420px;
+}
+.mallsearch-form{
+    margin: 0;
+    padding: 0;
+    border-width: 2px 0 2px 2px;
+    border: 2px solid #c40000;
+    clear: both;
+    overflow: hidden;
+}
+
+.hs-con{
+    height: 36px;
+    width: 75%;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    border: none;
+}
+.hs-sub{
+    background-color: #c40000;
+    width:25%;
+    height: 36px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    border:none;
+    float: left;
+    color: #ffffff;
+}
+.main-nav{
+    background-color: #c40000;
+    width: 100%;
+    height: 34px;
+    position: relative;
+    margin: 0 auto;
+}
+.nav-content{
+    line-height:34px;
+    font-size: 15px;
+    font-weight: 400;
+    width: 1160px;
+    margin: auto;
+}
+.n-list{
+    list-style: none;
+}
+.n-list > li{
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+}
+.n-list > li > a{
+    display: block;
+    color: white;
+    height: 34px;
+    padding: 0px 30px;
+}
+.n-list >li > a:hover{
+    text-decoration: none;
+    color: white;
+    background-color: darkred;
+}
+.n-list > li.active{
+    background-color: darkred;
+    font-weight: 600;
+}
+.classify{
+    display: block;
+    width: 180px;
+    border-left: 2px solid darkred;
+    text-align: center;
+}
+.classify .dropdown-menu{
+    width: 180px;
+    margin: 0px;
+    padding: 0px;
+    left: -2px;
+    background-color:#f2f2f2 ;
+    text-align: center;
+    border-top: none;
+}
+.classify .dropdown-menu > li{
+    height: 34px;
+}
+.classify .dropdown-menu > li > a {
+    line-height: 34px;
+    height: 34px;
+}
+.classify .dropdown-menu >li >a:hover{
+    background-color: #d43f3a;
+    color: whitesmoke;
+}
+.adv{
+    width: 800px;
+    height: 380px; ;
+    margin:auto;
+    min-width: 600px;
+}
+.adv img{
+    width: 800px;
+}
+.brand{
+    width: 990px;
+    margin: auto;
+    margin-top: 200px;
+}
+.brand-content{
+    width:990px;
+    height:300px;
+    background-color: #122b40;
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Goods" table="goods" catalog="mml">
+        <id name="GId" type="java.lang.Integer">
+            <column name="g_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="seller" class="com.mml.hbm.Seller" fetch="select">
+            <column name="s_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="categorya" class="com.mml.hbm.Categorya" fetch="select">
+            <column name="CategoryAID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="categoryb" class="com.mml.hbm.Categoryb" fetch="select">
+            <column name="CategoryBID" not-null="true" />
+        </many-to-one>
+        <property name="GName" type="string">
+            <column name="g_Name" length="10" not-null="true" />
+        </property>
+        <property name="GPrice" type="big_decimal">
+            <column name="g_Price" precision="10" not-null="true" />
+        </property>
+        <property name="GPicture" type="string">
+            <column name="g_Picture" length="50" not-null="true" />
+        </property>
+        <property name="GDescription" type="string">
+            <column name="g_Description" length="100" not-null="true" />
+        </property>
+        <property name="GTag" type="string">
+            <column name="g_Tag" length="10" not-null="true" />
+        </property>
+        <property name="GUpdateTime" type="timestamp">
+            <column name="g_UpdateTime" length="19" not-null="true" />
+        </property>
+        <property name="GNumber" type="int">
+            <column name="g_Number" not-null="true" />
+        </property>
+        <property name="GSales" type="int">
+            <column name="g_Sales" not-null="true" />
+        </property>
+        <property name="GClick" type="int">
+            <column name="g_Click" not-null="true" />
+        </property>
+        <set name="comments" table="comment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="g_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Comment" />
+        </set>
+        <set name="gifts" table="gift" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="g_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Gift" />
+        </set>
+        <set name="orderses" table="orders" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="g_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Orders" />
+        </set>
+        <set name="charts" table="chart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="g_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Chart" />
+        </set>
+    </class>
+</hibernate-mapping>

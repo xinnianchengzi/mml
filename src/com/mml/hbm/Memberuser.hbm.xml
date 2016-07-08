@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Memberuser" table="memberuser" catalog="mml">
+        <id name="MId" type="java.lang.Integer">
+            <column name="m_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="grades" class="com.mml.hbm.Grades" fetch="select">
+            <column name="grades_ID" not-null="true" />
+        </many-to-one>
+        <property name="MName" type="string">
+            <column name="m_Name" length="10" not-null="true" />
+        </property>
+        <property name="MPassword" type="string">
+            <column name="m_Password" length="16" not-null="true" />
+        </property>
+        <property name="MPhone" type="string">
+            <column name="m_Phone" length="11" not-null="true" />
+        </property>
+        <property name="MEmail" type="string">
+            <column name="m_Email" length="30" not-null="true" />
+        </property>
+        <property name="MPoints" type="int">
+            <column name="m_Points" not-null="true" />
+        </property>
+        <property name="MBalance" type="big_decimal">
+            <column name="m_Balance" precision="10" />
+        </property>
+        <property name="MTelCode" type="string">
+            <column name="m_TelCode" length="6" />
+        </property>
+        <property name="MMailCode" type="string">
+            <column name="m_MailCode" length="10" />
+        </property>
+        <property name="MVerify" type="string">
+            <column name="m_Verify" length="2" not-null="true" />
+        </property>
+        <property name="MRegTime" type="timestamp">
+            <column name="m_RegTime" length="19" />
+        </property>
+        <set name="viewboards" table="viewboard" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Viewboard" />
+        </set>
+        <set name="charts" table="chart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Chart" />
+        </set>
+        <set name="coupongets" table="couponget" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Couponget" />
+        </set>
+        <set name="comments" table="comment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Comment" />
+        </set>
+        <set name="orderses" table="orders" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Orders" />
+        </set>
+        <set name="addresses" table="address" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="m_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Address" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Viewboard" table="viewboard" catalog="mml">
+        <id name="VId" type="java.lang.Integer">
+            <column name="v_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="seller" class="com.mml.hbm.Seller" fetch="select">
+            <column name="s_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="memberuser" class="com.mml.hbm.Memberuser" fetch="select">
+            <column name="m_ID" not-null="true" />
+        </many-to-one>
+        <property name="VMessage" type="string">
+            <column name="v_Message" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

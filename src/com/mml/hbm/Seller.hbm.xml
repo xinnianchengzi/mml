@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Seller" table="seller" catalog="mml">
+        <id name="SId" type="java.lang.Integer">
+            <column name="s_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="SName" type="string">
+            <column name="s_Name" length="10" not-null="true" />
+        </property>
+        <property name="SPassword" type="string">
+            <column name="s_Password" length="16" not-null="true" />
+        </property>
+        <property name="SPhome" type="string">
+            <column name="s_Phome" length="11" not-null="true" />
+        </property>
+        <property name="SEmail" type="string">
+            <column name="s_Email" length="30" not-null="true" />
+        </property>
+        <property name="SAd" type="string">
+            <column name="s_Ad" length="2" />
+        </property>
+        <property name="SAddress" type="string">
+            <column name="s_Address" length="50" not-null="true" />
+        </property>
+        <property name="SLogo" type="string">
+            <column name="s_Logo" length="50" not-null="true" />
+        </property>
+        <property name="SPost" type="string">
+            <column name="s_Post" length="50" not-null="true" />
+        </property>
+        <property name="SActivityA" type="string">
+            <column name="s_ActivityA" length="50" not-null="true" />
+        </property>
+        <property name="SActivityB" type="string">
+            <column name="s_ActivityB" length="50" not-null="true" />
+        </property>
+        <property name="SActivityC" type="string">
+            <column name="s_ActivityC" length="50" not-null="true" />
+        </property>
+        <property name="STelCode" type="string">
+            <column name="s_TelCode" length="6" not-null="true" />
+        </property>
+        <property name="SMailCode" type="string">
+            <column name="s_MailCode" length="10" not-null="true" />
+        </property>
+        <property name="SVerify" type="string">
+            <column name="s_Verify" length="2" not-null="true" />
+        </property>
+        <property name="SRegTime" type="timestamp">
+            <column name="s_RegTime" length="19" not-null="true" />
+        </property>
+        <set name="charts" table="chart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Chart" />
+        </set>
+        <set name="goodses" table="goods" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Goods" />
+        </set>
+        <set name="gifts" table="gift" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Gift" />
+        </set>
+        <set name="advertisements" table="advertisement" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Advertisement" />
+        </set>
+        <set name="viewboards" table="viewboard" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Viewboard" />
+        </set>
+        <set name="comments" table="comment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="s_ID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Comment" />
+        </set>
+    </class>
+</hibernate-mapping>

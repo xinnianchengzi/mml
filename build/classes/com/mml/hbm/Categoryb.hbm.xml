@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Categoryb" table="categoryb" catalog="mml">
+        <id name="categoryBid" type="java.lang.Integer">
+            <column name="CategoryBID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categorya" class="com.mml.hbm.Categorya" fetch="select">
+            <column name="CategoryAID" not-null="true" />
+        </many-to-one>
+        <property name="categoryBname" type="string">
+            <column name="CategoryBName" length="10" not-null="true" />
+        </property>
+        <set name="goodses" table="goods" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CategoryBID" not-null="true" />
+            </key>
+            <one-to-many class="com.mml.hbm.Goods" />
+        </set>
+    </class>
+</hibernate-mapping>

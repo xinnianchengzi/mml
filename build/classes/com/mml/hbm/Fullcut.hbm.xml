@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Fullcut" table="fullcut" catalog="mml">
+        <id name="FId" type="java.lang.Integer">
+            <column name="f_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="SId" type="int">
+            <column name="s_ID" not-null="true" />
+        </property>
+        <property name="FFull" type="big_decimal">
+            <column name="f_Full" precision="10" not-null="true" />
+        </property>
+        <property name="FCut" type="big_decimal">
+            <column name="f_Cut" precision="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

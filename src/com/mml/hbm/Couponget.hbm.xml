@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Couponget" table="couponget" catalog="mml">
+        <composite-id name="id" class="com.mml.hbm.CoupongetId">
+            <key-property name="CId" type="int">
+                <column name="c_ID" />
+            </key-property>
+            <key-property name="MId" type="int">
+                <column name="m_ID" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="coupon" class="com.mml.hbm.Coupon" update="false" insert="false" fetch="select">
+            <column name="c_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="memberuser" class="com.mml.hbm.Memberuser" update="false" insert="false" fetch="select">
+            <column name="m_ID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

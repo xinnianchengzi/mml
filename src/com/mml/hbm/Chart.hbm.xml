@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-7 16:20:39 by Hibernate Tools 4.0.0.Final -->
+<hibernate-mapping>
+    <class name="com.mml.hbm.Chart" table="chart" catalog="mml">
+        <composite-id name="id" class="com.mml.hbm.ChartId">
+            <key-property name="MId" type="int">
+                <column name="m_ID" />
+            </key-property>
+            <key-property name="GId" type="int">
+                <column name="g_ID" />
+            </key-property>
+            <key-property name="SId" type="int">
+                <column name="s_ID" />
+            </key-property>
+            <key-property name="chartChoseNumber" type="int">
+                <column name="chart_ChoseNumber" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="goods" class="com.mml.hbm.Goods" update="false" insert="false" fetch="select">
+            <column name="g_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="seller" class="com.mml.hbm.Seller" update="false" insert="false" fetch="select">
+            <column name="s_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="memberuser" class="com.mml.hbm.Memberuser" update="false" insert="false" fetch="select">
+            <column name="m_ID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
